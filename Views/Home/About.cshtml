@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = null;
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2 class="page_title_header">@ViewBag.Title</h2>
+
+    <!--About heading-->
+    <hr class="featurette-divider1">
+    <h1 class="myOwn_H1">About my comic book wesbite.</h1>
+    <hr class="featurette-divider">
+
+    <!--About webpage-->
+    <p class="about_text">
+        My comic business is an online platform where I showcase my favorite comics to fellow comic enthusiasts.
+        Through my website, visitors can browse through a collection of hand-picked comic books that I have personally selected for their quality and entertainment value.
+        My aim is to create a community of like-minded individuals who share a passion for comics and graphic novels.
+        I want to provide a platform for readers to discover new titles and authors, and to engage with other fans through discussion forums and social media.
+        In addition to featuring comics on my website, I also provide reviews and recommendations to help readers make informed choices about what to read next.
+        I believe that comics are a unique and valuable form of storytelling, and I am dedicated to promoting this art form and supporting the creators who make it possible.
+    </p>
+
+    <!--Column for links to other page-->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Latest News</h2>
+            <p>
+                Click here to get the latest news about the new comic books that are coming soon that i am excited to read.
+            </p>
+            @Html.ActionLink("Click Here", "Latest", "Home", null, new { @class = "btn btn-lg btn-danger" })
+        </div>
+        <div class="col-md-4">
+            <h2>My Favorites</h2>
+            <p>Click here to get the list of my favorite cmic books that i have read and really enjoyed.</p>
+            @Html.ActionLink("Click Here", "Favorites", "Home", null, new { @class = "btn btn-lg btn-danger" })
+        </div>
+        <div class="col-md-4">
+            <h2>Location</h2>
+            <p>Click here to get the locations of the comic books near me in my area Gqeberha</p>
+            @Html.ActionLink("Click Here", "Location", "Home", null, new { @class = "btn btn-lg btn-danger" })
+        </div>
+    </div>
+
+</body>
+</html>

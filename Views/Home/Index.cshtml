@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+    <!--wrapper-->
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="inner cover">
+                    <!--Welcome message-->
+                    <h1 class="cover-heading">Welcome to my comic book website!</h1>
+                    <p class="lead">
+                        <!--introduction-->
+                        Here, you will find a carefully curated selection of comic books from various authors and publishers that I personally enjoy and recommend.
+                        hope that you will enjoy exploring my collection and discovering new titles that you'll love just as much as I do.
+                    </p>
+                    <p class="lead">
+                        <!--about us button link-->
+                        @Html.ActionLink("About Us", "About", "Home", null, new { @class = "btn btn-lg btn-danger" })
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
