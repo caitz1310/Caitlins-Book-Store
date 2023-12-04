@@ -1,52 +1,38 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using SLD_Group_Activity_FA4.Models;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
+using System.Net.Http;
+using System.Net;
 
-namespace FA2_Caitlin_Hermanus_20232198.Controllers
+namespace SLD_Group_Activity_FA4.Controllers
 {
+    
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        static HttpClient client;
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult Favorites()
-        {
-            ViewBag.Message = "Your Favorties page.";
-
-            return View();
-        }
-
-        public ActionResult Latest()
-        {
-            ViewBag.Message = "Your Latest page.";
-
-            return View();
-        }
-       
-
-        public ActionResult Location()
-        {
-            ViewBag.Message = "Your Location page.";
-
-            return View();
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
